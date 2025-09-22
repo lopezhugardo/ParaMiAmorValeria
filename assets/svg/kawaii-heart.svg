@@ -1,0 +1,8 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M29.2,3.4C26.1-0.4,20.2-1.1,16,2.2C11.8-1.1,5.9-0.4,2.8,3.4C-0.9,7.9-0.9,14.4,2.8,18.9L16,32l13.2-13.1 C32.9,14.4,32.9,7.9,29.2,3.4z" fill="currentColor"/>
+    <!-- Ojos -->
+    <circle cx="11" cy="12" r="1.5" fill="black" />
+    <circle cx="21" cy="12" r="1.5" fill="black" />
+    <!-- Sonrisa -->
+    <path d="M12,18 Q16,22 20,18" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="round" />
+</svg>

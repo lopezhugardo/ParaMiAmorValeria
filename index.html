@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21 de Septiembre</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Botón para la carta -->
+    <button id="letter-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </button>
+
+    <!-- Overlay para la carta -->
+    <div id="letter-overlay" class="hidden">
+        <div id="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body"></div>
+            <div class="letter-preview"></div>
+        </div>
+        <div id="letter-content" class="hidden">
+            <div class="paper">
+                <p class="date">21 de Septiembre, 2025</p>
+                <p class="salutation">Mi amada Valeria,</p>
+                <p class="message-body">
+                    Aquí puedes escribir el mensaje que desees. Este es solo un texto de ejemplo para que veas cómo queda el diseño. Puedes extenderlo tanto como quieras, y las palabras fluirán en este papel virtual, creado solo para ti.
+                </p>
+                <p class="closing">Con todo mi amor,</p>
+                <p class="signature">[Tu Nombre]</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Canvas para el efecto de particulas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        <h1 class="main-text">Te amo Valeria <span class="heart">❤️</span></h1>
+        
+        <!-- Girasol en Maceta -->
+        <div class="flower-pot-container">
+            <div class="sunflower-container">
+                <div class="sunflower">
+                    <div class="center"></div>
+                    <div class="petal p1"></div>
+                    <div class="petal p2"></div>
+                    <div class="petal p3"></div>
+                    <div class="petal p4"></div>
+                    <div class="petal p5"></div>
+                    <div class="petal p6"></div>
+                    <div class="petal p7"></div>
+                    <div class="petal p8"></div>
+                    <div class="petal p9"></div>
+                    <div class="petal p10"></div>
+                    <div class="petal p11"></div>
+                    <div class="petal p12"></div>
+                </div>
+                <div class="stem"></div>
+                <div class="leaf l1"></div>
+                <div class="leaf l2"></div>
+            </div>
+            <div class="pot">
+                <div class="pot-body"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Controles de musica -->
+    <audio id="background-music" src="assets/music/Floricienta — Flores Amarillas [Letra] - armxndo.mp3" loop></audio>
+    <button id="music-control-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+            <path d="M0 0h24v24H0z" fill="none"/>
+        </svg>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>
