@@ -1,0 +1,445 @@
+/* --- Estilos Globales --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Great Vibes', cursive;
+    background-color: #000;
+}
+
+/* --- Fondo Estrellado --- */
+body { background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); }
+@keyframes move-twink-back { from {background-position:0 0;} to {background-position:-10000px 5000px;} }
+.stars, .twinkling { position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; display:block; }
+.stars { background:#000 url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top center; z-index:0; }
+.twinkling { background:transparent url(https://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center; z-index:1; animation:move-twink-back 200s linear infinite; }
+
+/* --- Canvas de Partículas --- */
+#particles-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+
+/* --- Contenedor Principal --- */
+.main-container { position: relative; z-index: 3; display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; text-align: center; }
+
+/* --- Texto Principal --- */
+.main-text {
+    font-size: 5rem;
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(0,0,0,0.8), 0 0 20px #FFC107, 0 0 30px #FFC107;
+    margin: 0;
+    padding-bottom: 45vh; /* Espacio para la cúpula */
+}
+
+.heart {
+    color: #ff4d4d;
+    text-shadow: 0 0 15px #ff4d4d, 0 0 25px #ff4d4d;
+}
+
+/* --- Cúpula y Flor Encantada --- */
+.dome-container {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 400px;
+}
+
+.base {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: #3a2a1a;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.glass-dome {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 300px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 110px 110px 0 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.3), rgba(255,255,255,0.0) 50%);
+    z-index: 10;
+}
+
+.pot {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 60px;
+    background: #6d4c41;
+    border-radius: 0 0 10px 10px;
+    z-index: 2;
+}
+
+.flower-stem {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 150px;
+    background: #006400;
+    border-radius: 4px;
+    z-index: 3;
+}
+
+.leaf-rose {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    width: 50px;
+    height: 40px;
+    background: #2e8b57;
+    border-radius: 0 100%;
+    transform: rotate(20deg);
+    transform-origin: bottom left;
+    z-index: 3;
+}
+
+.flower-head {
+    position: absolute;
+    bottom: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    animation: flower-glow 4s infinite alternate;
+    z-index: 4;
+}
+
+.petal-rose {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 0 50%;
+    background: #ffeb3b;
+}
+
+.p1 { transform: rotate(20deg); }
+.p2 { transform: rotate(80deg) scale(0.9); background: #fdd835; }
+.p3 { transform: rotate(140deg); }
+.p4 { transform: rotate(200deg) scale(0.9); background: #fdd835; }
+.p5 { transform: rotate(260deg); }
+.p6 { transform: rotate(320deg) scale(0.9); background: #fdd835; }
+
+@keyframes flower-glow { from { filter: drop-shadow(0 0 5px #ffeb3b); } to { filter: drop-shadow(0 0 15px #fff); } }
+
+/* --- Botón de Música --- */
+#music-control-btn { position: fixed; top: 20px; right: 20px; z-index: 12; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,215,0,0.5); color: #FFD700; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: background 0.3s ease; }
+#music-control-btn:hover { background: rgba(255,215,0,0.2); }
+#music-control-btn svg { width: 28px; height: 28px; fill: #FFD700; }
+
+/* --- Botón de la Carta --- */
+#letter-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 12;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,215,0,0.5);
+    color: #FFD700;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+#letter-btn:hover {
+    background: rgba(255,215,0,0.2);
+}
+
+#letter-btn svg {
+    width: 28px;
+    height: 28px;
+    fill: #FFD700;
+}
+
+/* --- Overlay de la Carta --- */
+#letter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+}
+
+#letter-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* --- Estilos del Sobre --- */
+#envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+#envelope.open {
+    transform: translateY(-50px) rotateX(30deg);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #e0e0e0;
+    border-radius: 8px 8px 0 0;
+    transform-origin: top;
+    transition: transform 0.5s ease;
+    z-index: 2;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+#envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-radius: 0 0 8px 8px;
+    z-index: 1;
+}
+
+.letter-preview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 70%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* --- Contenido de la Carta --- */
+/* --- Contenido de la Carta --- */
+#letter-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 700px; /* Ancho máximo para que parezca una hoja de carpeta */
+    max-height: calc(100% - 100px); /* Ajustar altura para dejar espacio */
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    color: #333;
+    overflow-y: auto;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+}
+
+#letter-content.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+
+/* --- Estilos Globales --- 
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Great Vibes', cursive;
+    background-color: #000;
+}
+
+/* --- Fondo Estrellado --- */
+body { background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); }
+@keyframes move-twink-back { from {background-position:0 0;} to {background-position:-10000px 5000px;} }
+.stars, .twinkling { position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; display:block; }
+.stars { background:#000 url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top center; z-index:0; }
+.twinkling { background:transparent url(https://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center; z-index:1; animation:move-twink-back 200s linear infinite; }
+
+/* --- Canvas de Partículas --- */
+#particles-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+
+/* --- Contenedor Principal --- */
+.main-container { position: relative; z-index: 3; display: flex; justify-content: center; align-items: center; height: 100%; flex-direction: column; text-align: center; }
+
+/* --- Texto Principal --- */
+.main-text {
+    font-size: 6rem;
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(0,0,0,0.8), 0 0 20px #FFC107, 0 0 30px #FFC107;
+    margin: 0;
+    padding-bottom: 50vh; /* Increased space to prevent overlap with flower */
+}
+
+.heart {
+    color: #ff4d4d;
+    text-shadow: 0 0 15px #ff4d4d, 0 0 25px #ff4d4d;
+}
+
+/* --- Girasol Definitivo --- */
+.sunflower-container {
+    position: absolute;
+    bottom: 80px; /* Adjusted to be above the pot */
+    left: 50%;
+    width: 250px;
+    height: 400px;
+    transform: translateX(-50%);
+    animation: wind-sway 8s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+
+.sunflower {
+    position: absolute;
+    top: 40px; /* Conecta la flor con el tallo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    z-index: 4;
+}
+
+.center {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #8B4513 0%, #5C2E00 100%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 90px;
+    background: #FFC107;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    border-radius: 50% 50% 0 0;
+    z-index: 2;
+}
+
+/* Capa trasera de pétalos */
+.p1, .p3, .p5, .p7, .p9, .p11 { background: #FFA000; z-index: 1; }
+
+/* Distribución de pétalos */
+.p1 { transform: translate(-50%, -90%) rotate(15deg); }
+.p2 { transform: translate(-50%, -90%) rotate(45deg); }
+.p3 { transform: translate(-50%, -90%) rotate(75deg); }
+.p4 { transform: translate(-50%, -90%) rotate(105deg); }
+.p5 { transform: translate(-50%, -90%) rotate(135deg); }
+.p6 { transform: translate(-50%, -90%) rotate(165deg); }
+.p7 { transform: translate(-50%, -90%) rotate(195deg); }
+.p8 { transform: translate(-50%, -90%) rotate(225deg); }
+.p9 { transform: translate(-50%, -90%) rotate(255deg); }
+.p10 { transform: translate(-50%, -90%) rotate(285deg); }
+.p11 { transform: translate(-50%, -90%) rotate(315deg); }
+.p12 { transform: translate(-50%, -90%) rotate(345deg); }
+
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 15px;
+    height: 250px; /* Tallo más largo */
+    background: #388E3C;
+    transform: translateX(-50%);
+    border-radius: 10px 10px 0 0;
+    z-index: 3;
+}
+
+.leaf {
+    position: absolute;
+    width: 80px;
+    height: 70px;
+    background-color: #4CAF50;
+    border-radius: 100% 0;
+    bottom: 120px;
+    z-index: 2;
+    animation: leaf-flutter 8s ease-in-out infinite;
+}
+
+/* Hojas simétricas */
+.l1 { /* Hoja derecha */
+    left: 50%;
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+}
+.l2 { /* Hoja izquierda */
+    right: 50%;
+    transform: scaleX(-1) rotate(45deg);
+    transform-origin: bottom right;
+    animation-delay: -0.5s;
+}
+
+/* --- Animaciones --- */
+@keyframes wind-sway { 0%, 100% { transform: translateX(-50%) rotate(0deg); } 50% { transform: translateX(-55%) rotate(-5deg); } }
+@keyframes leaf-flutter { 0%, 100% { transform: skewX(0deg); } 50% { transform: skewX(8deg); } }
+
+/* --- Botón de Música --- */
+#music-control-btn { position: fixed; top: 20px; right: 20px; z-index: 10; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,215,0,0.5); color: #FFD700; border-radius: 50%; width: 50px; height: 50px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: background 0.3s ease; }
+#music-control-btn:hover { background: rgba(255,215,0,0.2); }
+#music-control-btn svg { width: 28px; height: 28px; fill: #FFD700; }
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+    .main-text { font-size: 3.5rem; padding-bottom: 30vh; }
+    .sunflower-container { transform: translateX(-50%) scale(0.8); }
+}
+
+@media (max-width: 480px) {
+    .main-text { font-size: 2.8rem; padding-bottom: 30vh; }
+    .sunflower-container { transform: translateX(-50%) scale(0.7); }
+}
+
